@@ -1,0 +1,42 @@
+.sevice__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.service{
+  margin-top: 20px;
+}
+
+.service__item{
+  cursor: pointer;
+  text-align: center;
+
+  &:hover i {
+    animation:  shake 0.1s linear;
+  }
+
+  @keyframes shake {
+   
+    from {
+      transform: translate(-5px);
+    }
+    to{
+      transform: translate(5px);
+    }
+    
+  }
+  
+  i{
+    font-size: 35px;
+    color: #7ab525;
+    margin-bottom: 20px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+}

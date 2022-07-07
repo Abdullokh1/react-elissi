@@ -1,0 +1,118 @@
+.top-nav__text{
+  flex-grow: 1;
+  font-size: 14.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.top-nav{
+  border-bottom: 1px solid rgba(204, 204, 204, 0.416);
+  padding: 5px 0;
+
+  p{
+    font-size: 14.5px;
+  }
+}
+
+.top-nav__list{
+  position: relative;
+
+  li{
+    cursor: pointer;
+    padding-bottom: 10px;
+    position: relative;
+    top: 5px;
+  }
+  
+  p{
+    transition: all 0.3s ease;
+  }
+
+}
+
+.top-nav__lang-box{
+  min-width: 145px;
+  padding: 10px;
+  background-color: #fff;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  border: 1px solid #ececec;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 111;
+
+
+  li:hover{
+    p{
+      color: #7ab525;
+    }
+  }
+  
+  li{
+    font-size: 15px;
+  }
+}
+
+.top-nav__dropdown{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 10px;
+  position: relative;
+  top: 5px;
+
+  p:hover{
+    color: #7ab525;
+  }
+
+  &:hover{
+    .top-nav__lang-box{
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+  }
+}
+
+
+.top-nav__dropdown-currency{
+  &:hover{
+    .top-nav__currency{
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+  }
+}
+
+.bx-user-circle{
+  position: relative;
+  top: 4px;
+  font-size: 20px;
+}
+
+.top-nav__login{
+  position: relative;
+  top: -1px;
+  font-size: 14.5px;
+  transition: all 0.3s ease;
+  &:hover{
+    color: #7ab525;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .top-nav__list{
+    display: none !important;
+  }
+
+  .top-nav__wrapper{
+    text-align: center;
+  }
+
+  .bx-news{
+    display: none;
+  }
+}

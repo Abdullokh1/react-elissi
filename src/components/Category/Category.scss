@@ -1,0 +1,44 @@
+.categories{
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.categories__list{
+  
+  &:hover .slick-arrow::before{
+    visibility: visible;
+  }
+
+  li{
+    cursor: pointer;
+  }
+
+  h4{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+.slick-prev{
+  left: -40px !important;
+}
+
+.categories__img{
+  width: 189px;
+  height: 133px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+
+.slick-arrow{
+  &::before{
+    visibility: hidden;
+    color: rgba(0, 0, 0, 0.689) !important;
+    font-size: 30px !important;
+  }
+}

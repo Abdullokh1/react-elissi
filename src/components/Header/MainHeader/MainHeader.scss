@@ -1,0 +1,153 @@
+.header__inner{
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+}
+
+.header__input{
+  width: 100%;
+  height: 44px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  padding-right: 140px;
+  border-radius: 5px;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.header__input-wrapper{
+  position: relative;
+}
+
+.header__search{
+  position: absolute;
+  right: 0;
+  background-color: #7ab525;
+  height: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+
+  span{
+    position: relative;
+    top: -4px;
+  }
+
+  &:hover{
+    background-color: #608f20;
+  }
+
+  i{
+    font-size: 25px;
+    margin-left: 7px;
+  }
+}
+
+.header__btn-wrap{
+  display: flex;
+  justify-content: end;
+}
+
+.header__bag-badge{
+  width: 17px;
+  height: 17px;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #608f20;
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.header__buttons{
+  transition: all 0.3s ease;
+
+  &:nth-child(1){
+    position: relative;
+  }
+  &:hover{
+    color: #7ab525;
+  }
+  margin-left: 7px;
+
+  i{
+    font-size: 28px;
+  }
+}
+
+.offcanvas-header{
+  justify-content: center;
+}
+
+.offcanvas-close{
+  position: absolute;
+  left: -20px;
+  top: 30px;
+  background-color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(204, 204, 204, 0.497);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  i{
+    font-size: 30px;
+  }
+
+  &:hover{
+    background-color: #7ab525;
+    color: #fff;
+  }
+}
+
+.offcanvas{
+  width: 460px !important;
+}
+
+.offcanvas-title{
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+
+@media screen and (max-width: 1140px) {
+  .header__input{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .header__input-wrapper{
+    display: none;
+  }
+
+  .header__buttons{
+    &:nth-child(3){
+      display: none;
+    }
+
+    &:nth-child(2){
+      display: none;
+    }
+  }
+
+  .header__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+}

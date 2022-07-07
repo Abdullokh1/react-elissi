@@ -1,0 +1,257 @@
+.deals-inner{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  position: absolute;
+  top: 222px;
+  z-index: 222;
+}
+
+.deals-inner__img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.deals-inner__imgWrap{
+  position: relative;
+}
+
+.deals-inner__content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  i{
+    margin-right: 5px;
+    font-size: 15px;
+
+    &:not(:first-child){
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  span{
+    cursor: pointer;
+    font-size: 15px;
+
+
+    &:hover{
+      color: #7ab525;
+      text-decoration: underline;
+    }
+  }
+
+  p{
+    color: #000;
+  }
+}
+
+.deals-inner__title{
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.deals-inner__home{
+  font-size: 15px;
+
+  p{
+    &:hover{
+      color: #7ab525;
+    }
+  }
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.fruit-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.fruit-info__imgWrap{
+  position: relative;
+  width: 80%;
+}
+
+.fruit-info__discount{
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: #7ab525;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.fruit-info__btnWrap{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+
+  button{
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 4px;
+    &:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.fruit-info__right{
+  h4{
+    font-size: 33px;
+  }
+
+  del{
+    font-size: 24px;
+    margin-right: 15px;
+    color: #aaa;
+  }
+
+  span{
+    font-size: 26px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+}
+
+.fruit-info__fire{
+  animation: appear 2s infinite linear;
+}
+
+.fruit-info__dealFill{
+  animation: grow 3s linear ;
+}
+
+@keyframes grow {
+  from{
+    width: 100%;
+  }
+  to{
+    width: 60%;
+  }
+}
+
+.fruit-info__sold{
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+@keyframes appear{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.bx-timer{
+  font-size: 25px;
+  margin-right: 10px;
+  color: #aaa;
+}
+
+.fruit-info__sale{
+  font-weight: 500;
+}
+
+.fruit-info__list{
+  li{
+    margin-bottom: 0;
+    span{
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+}
+
+.fruit-info__amount{
+  height: 5px;
+
+  span{
+    height: 5px;
+  }
+}
+
+
+.fruit-info__input{
+  width: 45px;
+  height: 38px;
+  border: 1px solid #efefef;
+  padding-left: 18px;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.fruit-info__addBts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #efefef;
+  width: 21px;
+  height: 19px;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background-color: rgba(204, 204, 204, 0.644);
+  }
+}
+
+.fruit-info__main-btns{
+  background-color: #6bad0d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  max-width: 300px;
+  flex-grow: 1;
+  transition: all 0.4s ease;
+
+  &:hover{
+    background-color: #4a760c;
+  }
+
+  &:not(:last-child){
+    margin: 0 10px;
+  }
+}
+
+.fruit-info__about{
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.fruit-info__socialMedia{
+  li{
+    &:not(:last-child){
+      margin-right: 20px;
+    }
+
+    a{
+      color: #858585;
+    }
+  }
+}
