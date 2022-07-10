@@ -15,6 +15,26 @@ import violet from '../assets/Images/violet.jpg'
 import greenLemon from '../assets/Images/green-lemon.jpg'
 import milk from '../assets/Images/milk.jpg'
 import lime from '../assets/Images/lime.jpg'
+import onion1 from '../assets/Images/onion-1.jpg'
+import onion2 from '../assets/Images/onion-2.jpg'
+import redCabbage1 from '../assets/Images/red-cabbage-1.jpg'
+import redCabbage2 from '../assets/Images/red-cabbage-2.jpg'
+import cucumber1 from '../assets/Images/cucumber-1.jpg'
+import yellow1 from '../assets/Images/yellow-1.jpg'
+import yellow2 from '../assets/Images/yellow-2.jpg'
+import chili1 from '../assets/Images/chili-1.jpg'
+import chili2 from '../assets/Images/chili-2.jpg'
+import milk1 from '../assets/Images/milk-1.jpg'
+import milk2 from '../assets/Images/milk-2.jpg'
+import limonade1 from '../assets/Images/limonade-1.jpg'
+import limonade2 from '../assets/Images/limonade-2.jpg'
+import purea1 from '../assets/Images/purea-1.jpg'
+import pineapple1 from '../assets/Images/pineapple-1.jpg'
+import pineapple2 from '../assets/Images/pineapple-2.jpg'
+import melegarna1 from '../assets/Images/melegarna-1.jpg'
+import juice1 from '../assets/Images/juice-1.jpg'
+import juice2 from '../assets/Images/juice-2.jpg'
+
 
 
 
@@ -76,6 +96,8 @@ const dealData = [
     view: 15,
   },
 ]
+
+
 
 const ProductData = [
   {
@@ -150,7 +172,152 @@ const ProductData = [
     view: 46,
     type: 'fruits'
   },
+  {
+    id: 7,
+    images: [onion1, onion2],
+    name: 'Red Onion',
+    priceFrom: 6.00,
+    priceTo: 10.00,
+    soldCount: '2 sold in last 11 hours',
+    oldPrice: 20.00,
+    discount: '-50%',
+    StockCount: 84,
+    view: 36,
+    type: 'Vegetables'
+  },
+  {
+    id: 8,
+    images: [redCabbage1, redCabbage2],
+    name: 'Red Cabbage',
+    priceFrom: 9.00,
+    priceTo: 15.00,
+    soldCount: '4 sold in last 8 hours',
+    oldPrice: 20.00,
+    discount: '-50%',
+    StockCount: 84,
+    view: 35,
+    type: 'Vegetables'
+  },
+  {
+    id: 9,
+    images: [cucumber1],
+    name: 'Organic Almaverda',
+    priceFrom: 11.00,
+    priceTo: 18.00,
+    soldCount: '10 sold in last 18 hours',
+    oldPrice: 20.00,
+    discount: '-50%',
+    StockCount: 84,
+    view: 30,
+    type: 'Vegetables'
+  },
+  {
+    id: 10,
+    images: [yellow1, yellow2],
+    name: 'Organic Cauliflower',
+    priceFrom: 9.00,
+    priceTo: 10.00,
+    soldCount: '7 sold in last 10 hours',
+    oldPrice: 20.00,
+    discount: '-50%',
+    StockCount: 84,
+    view: 29,
+    type: 'Vegetables'
+  },
+  {
+    id: 11,
+    images: [chili1, chili2],
+    name: 'Chili Pepper',
+    priceFrom: 7.00,
+    priceTo: 10.00,
+    soldCount: '2 sold in last 16 hours',
+    oldPrice: 20.00,
+    discount: '-50%',
+    StockCount: 24,
+    view: 20,
+    type: 'Vegetables'
+  },
+  {
+    id: 12,
+    images: [milk1, milk2],
+    name: 'Sorbet Ice Cream',
+    priceFrom: 7.00,
+    priceTo: 12.00,
+    soldCount: '4 sold in last 11 hours',
+    oldPrice: 15.00,
+    discount: '-20%',
+    StockCount: 58,
+    view: 30,
+    type: 'Milk & Creams'
+  },
+  {
+    id: 13,
+    images: [limonade1, limonade2],
+    name: 'Ratto Milk',
+    priceFrom: 7.00,
+    priceTo: 20.00,
+    soldCount: '15 sold in last 13 hours',
+    oldPrice: 15.00,
+    discount: '-20%',
+    StockCount: 58,
+    view: 18,
+    type: 'Milk & Creams'
+  },
+  {
+    id: 14,
+    images: [purea1],
+    name: 'Purea Lime',
+    priceFrom: 7.00,
+    priceTo: 12.00,
+    soldCount: '9 sold in last 6 hours',
+    oldPrice: 18.00,
+    discount: '-33%',
+    StockCount: 34,
+    view: 11,
+    type: 'Milk & Creams'
+  },
+  {
+    id: 15,
+    images: [pineapple1, pineapple2],
+    name: 'Pineapple Slices',
+    priceFrom: 7.00,
+    priceTo: 20.00,
+    soldCount: '17 sold in last 18 hours',
+    oldPrice: 25.00,
+    discount: '-33%',
+    StockCount: 60,
+    view: 30,
+    type: 'Milk & Creams'
+  },
+  {
+    id: 16,
+    images: [melegarna1],
+    name: 'Lagrana Milk',
+    priceFrom: 7.00,
+    priceTo: 12.00,
+    soldCount: '10 sold in last 17 hours',
+    oldPrice: 18.00,
+    discount: '-33%',
+    StockCount: 83,
+    view: 17,
+    type: 'Milk & Creams'
+  },
+  {
+    id: 17,
+    images: [juice1, juice2],
+    name: 'Pomegranate Juice',
+    priceFrom: 7.00,
+    priceTo: 16.00,
+    soldCount: '16 sold in last 11 hours',
+    oldPrice: 18.00,
+    discount: '-33%',
+    StockCount: 83,
+    view: 49,
+    type: 'Milk & Creams'
+  },
+  
 ]
 
 
+export default ProductData;
 export {dealData}

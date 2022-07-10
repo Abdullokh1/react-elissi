@@ -69,7 +69,7 @@ function Deals() {
                        data-bs-toggle="offcanvas"
                        data-bs-target="#offcanvasRight"
                        aria-controls="offcanvasRight"
-                       onClick={() => addCart(item)} 
+                       onClick={() => addCart(item.id)} 
                        className='deals__add'>Add to cart</button>
                     </div>
                   </li>

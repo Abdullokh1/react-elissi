@@ -7,13 +7,14 @@ import dealHero from '../../../assets/Images/deal-hero.jpg'
 import fire from '../../../assets/Images/fire.png'
 import dealAdvert from '../../../assets/Images/deal-advert.png'
 import { useState } from 'react';
+import Footer from '../../Footer/Footer';
 
 function DealInner() {
 
   const dealsData = usestore(state => state.dealData)
   const addCart = usestore(state => state.addCard)
   let [count, setCount] = useState(1)
-
+  let [isLiked, setLiked] = useState(false)
   let location = useLocation()
 
 
@@ -54,8 +55,8 @@ function DealInner() {
                       <img className='fruit-info__img' src={item.image} alt={item.name} width='484' height='533'/>
                       <span className='fruit-info__discount'>{item.discount}</span>
                       <div className='fruit-info__btnWrap'>
-                        <button data-bs-toggle="tooltip" data-bs-placement="right" title="Wishlist">
-                          <i className='bx bx-heart' ></i>
+                        <button onClick={() => setLiked(!isLiked)} data-bs-toggle="tooltip" data-bs-placement="right" title="Wishlist">
+                          <i className={`${isLiked ? 'bx bxs-heart' : 'bx bx-heart'}`} ></i>
                         </button>
                         <button>
                           <i className='bx bx-refresh' ></i>
@@ -113,7 +114,7 @@ function DealInner() {
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight"
-                        onClick={() => addCart(item)} 
+                        onClick={() => addCart(item.id)} 
                       >
                         Add to cart
                       </button>
@@ -182,6 +183,7 @@ function DealInner() {
           )
         }
       })}
+      <Footer/>
     </div>
   )
 }

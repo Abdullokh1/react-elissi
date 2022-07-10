@@ -1,26 +1,26 @@
 import create from "zustand";
 import categories from "../CategoriesData";
 import { dealData } from "../Data/Data";
-
-let items = []
+import ProductData from '../Data/Data'
 
 
 const usestore = create((set) => ({
  categoryData: categories,
  dealData: dealData,
- items: items,
- addCard: (cards) =>{
-  const existingItems = items.find((item) => item.id === cards.id)
+ productData: ProductData,
+ data: dealData, mycardObj: [],
 
-  if(!existingItems) {
-    items.push({
-      id: cards.id,
-      name: cards.name,
-      newPrice: cards.newPrice,
-    });
-  } 
+ addCard: (cardId) =>{
+  set((state) => ({mycardObj: [...state.mycardObj,  ...state.data.filter(item => item.id === cardId)]}))
+},
+
+removeHandle: (removeId) =>{
+  set((state) => ({mycardObj: state.mycardObj.filter(item => item.id !== removeId)}))
 }
+
 }))
+
+
 
 
 export default usestore
