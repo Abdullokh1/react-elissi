@@ -71,12 +71,59 @@
   border-radius: 50%;
 }
 
+.header__wishlist-badge{
+  width: 17px;
+  height: 17px;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #608f20;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.header__searchBox{
+  background-color: #fff;
+  height: auto;
+  width: 848px;
+  height: auto;
+  padding: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 999;
+  box-shadow: rgba(115, 114, 114, 0.064) 0px 1px 4px;
+
+  h3{
+    font-size: 14px;
+    color: #000;
+  }
+
+  del{
+    color: #aaa;
+    font-size: 13px;
+  }
+  p, span{
+    color: #000;
+    font-size: 14.5px;
+  }
+
+}
+
 .header__buttons{
   transition: all 0.3s ease;
+  position: relative;
+  
 
   &:nth-child(1){
     position: relative;
   }
+
   &:hover{
     color: #7ab525;
   }

@@ -19,9 +19,9 @@ function Sponsors() {
       <div className='container'>
         <ul className='sponsor__list'>
           <Slider {...settings}>
-            {sponsors.map(item =>{
+            {sponsors.map((item, i) =>{
               return (
-                <li>
+                <li key={i}>
                   <img src={item} alt='sponsor-img' />
                 </li>
               ) 

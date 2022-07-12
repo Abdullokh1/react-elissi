@@ -13,6 +13,7 @@ import TopRated from './components/TopRated/TopRated';
 import Sponsors from './components/Sponsors/Sponsors';
 import Footer from './components/Footer/Footer';
 import Checkout from './components/Checkout/Checkout';
+import ProductInner from './components/Products/ProductInner/ProductInner';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         </>
       } />
       <Route path='/DealInner/:id' element={<DealInner/>}/>
+      <Route path='/ProductInner/:id' element={<ProductInner/>}/>
 
 
      </Routes>

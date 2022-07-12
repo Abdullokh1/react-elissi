@@ -1,25 +1,25 @@
-import React from 'react'
-import './DealInner.scss'
+import React, { useEffect, useState } from 'react'
+import usestore from '../../../store/store'
 import { useLocation } from 'react-router-dom';
 import {Link} from "react-router-dom";
-import usestore from '../../../store/store';
+import './ProductInner.scss'
+import Footer from '../../Footer/Footer';
 import dealHero from '../../../assets/Images/deal-hero.jpg'
 import fire from '../../../assets/Images/fire.png'
 import dealAdvert from '../../../assets/Images/deal-advert.png'
-import { useState } from 'react';
-import Footer from '../../Footer/Footer';
 
-function DealInner() {
-
+function ProductInner() {
+  const mainData = usestore(state => state.productData)
+  const addCart = usestore(state => state.addCard)
   const addWishlist = usestore(state => state.addWishlist)
-  const productData = usestore(state => state.productData)
-  const decrease = usestore(state => state.decrease)
-  const addCard = usestore(state => state.addCard)
+  let [count, setCount] = useState(1)
+  let [isLiked, setLiked] = useState(false)
   let location = useLocation()
 
+
   return (
-    <div className='deals-inner'>
-      {productData.map(item =>{
+    <section className='deals-inner'>
+      {mainData.map(item =>{
         if(item.id === +location.pathname.split('/').at(-1)){
           return(
             <div key={item.id}>
@@ -29,7 +29,7 @@ function DealInner() {
                     <p className='m-0 deals-inner__title'>{item.name}</p>
                     <div className='d-flex'>
                       <Link to='/' className='deals-inner__home d-flex align-items-center'>
-                        <p className='m-0'>Home</p>
+                      <p className='m-0'>Home</p>
                       </Link>
                       <i className='bx text-dark bx-chevron-right me-3'></i>
                       <span>
@@ -102,17 +102,17 @@ function DealInner() {
                       <span className='deals__fill fruit-info__dealFill'></span>
                     </div>
                     <div className='d-flex align-items-center mb-5'>
-                      <input className='fruit-info__input' type="text" Value={item.count}/>
+                      <input className='fruit-info__input' type="text" placeholder={count < 1 ? count = 1 : count}/>
                       <div>
-                        <button onClick={ () => addCard(item)} className='fruit-info__addBts'>+</button>
-                        <button onClick={() => decrease(item)} className='fruit-info__addBts'>-</button>
+                        <button onClick={() => setCount(count+1)} className='fruit-info__addBts'>+</button>
+                        <button onClick={() => setCount(count-1)} className='fruit-info__addBts'>-</button>
                       </div>
                       <button 
                         className='fruit-info__main-btns'
                         data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight"
-                        onClick={() => addCard(item)} 
+                        onClick={() => addCart(item)} 
                       >
                         Add to cart
                       </button>
@@ -171,7 +171,6 @@ function DealInner() {
                           </a>
                         </li>
                       </ul>
-
                     </div>
                       <img src={dealAdvert} alt="advert" width='494' height='47' />
                   </div>
@@ -182,11 +181,8 @@ function DealInner() {
         }
       })}
       <Footer/>
-    </div>
+  </section>
   )
 }
 
-export default DealInner
-
-
-
+export default ProductInner

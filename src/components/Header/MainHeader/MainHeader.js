@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainHeader.scss";
 import mainLogo from "../../../assets/Images/main-logo.png";
 import { Link } from "react-router-dom";
@@ -8,8 +8,15 @@ import useStore  from  '../../../store/store';
 
 
 function MainHeader() {
-
+  let [searchText, setSearchText] = useState('')
   const isAdded = useStore(state => state.isAdded)
+  const prodData = useStore(state => state.productData)
+  const myCard = useStore(state => state.myCartObj)
+  const wishlist = useStore(state => state.wishlist)
+
+  const searchHandler = (e) =>{
+    setSearchText(e.target.value)
+  }
 
   return (
     <header className="header">
@@ -23,6 +30,7 @@ function MainHeader() {
 
           <div className="header__input-wrapper">
             <input
+             onChange={searchHandler}
               type="text"
               className="header__input"
               placeholder="I'm shopping for ..."
@@ -32,6 +40,7 @@ function MainHeader() {
               <i className="bx bx-search"></i>
             </button>
           </div>
+
           <div>
             <div className="header__btn-wrap">
               <button
@@ -41,7 +50,7 @@ function MainHeader() {
                 className="header__buttons"
               >
                 <i className="bx bx-shopping-bag" />
-                <span style={{display: isAdded ? 'block' : 'none'}} className="header__bag-badge">1</span>
+                {myCard.length === 0 ? '' : <span className="header__bag-badge">{myCard.length}</span>} 
               </button>
               <button
                 data-bs-toggle="offcanvas"
@@ -53,6 +62,7 @@ function MainHeader() {
               </button>
               <button className="header__buttons">
                 <i className="bx bx-refresh" />
+               {wishlist.length === 0 ? '' : <span className="header__wishlist-badge">{wishlist.length}</span>} 
               </button>
             </div>
 
@@ -60,6 +70,31 @@ function MainHeader() {
             <WishListModal/>
           </div>
         </div>
+        <ul >
+          {
+            prodData.map((item, index) => {
+              if(searchText === '') {
+                return
+              }
+              if(item.name.toLowerCase().includes(searchText.toLowerCase())) {
+                return(
+                  <li key={index*55} className='header__searchBox'>
+                    <Link className='d-flex' to={`ProductInner/${item.id}`}>
+                      <div>
+                        <img src={item.images[0]} alt={item.name} width='70' height='70' />
+                      </div>
+                      <div className="ms-3">
+                        <h3>{item.name}</h3>
+                        <del className="me-2">${item.oldPrice}.00</del>
+                        <span>${item.priceTo}.00</span>
+                      </div>
+                    </Link>
+                  </li>
+                )
+              }
+            })
+          }
+          </ul>
       </div>
     </header>
   );

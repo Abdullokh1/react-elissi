@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import './CartModal.scss'
-import {Link} from "react-router-dom";
 import usestore from '../../../store/store'
 
 function CartModal() {
-    const cards = usestore(state => state.mycardObj)
-    const removeHandle = usestore(state => state.removeHandle)
-
-    let [addItem, setAddItem] = useState(1)
-
+    const cards = usestore(state => state.myCartObj)
+    const removeCard = usestore(state => state.removeCard)
+    const decrease = usestore(state => state.decrease)
+    const total = usestore(state => state.total)
+    const addCard = usestore(state => state.addCard)
     
   
   return (
@@ -19,25 +18,27 @@ function CartModal() {
           <i className='bx bx-chevron-right' ></i>
         </button>
       </div>
+
+      {cards.length == 0 ? '' : 
       <div className="offcanvas-body p-5 pb-2 pt-2">
         <ul className='added-cards'>
           {cards.map(item =>{
             return (
               <li key={item.id} className='d-flex align-items-start'>
-                <img src={item.image} alt={item.name} width='85' height='87' />
+                <img src={item.images[0]} alt={item.name} width='85' height='87' />
                 <div className='ms-3 flex-grow-1'>
                   <h5>{item.name}</h5>
                   <div className='d-flex align-items-center'>
-                    <input className='fruit-info__input' type="text" placeholder={addItem < 1 ? addItem = 1 : addItem}/>
+                    <input className='fruit-info__input' type="text" value={item.count} />
                     <div>
-                      <button onClick={ () => setAddItem(addItem+1)} className='fruit-info__addBts'>+</button>
-                      <button onClick={() => setAddItem(addItem-1)} className='fruit-info__addBts'>-</button>
+                      <button onClick={ () => addCard(item)} className='fruit-info__addBts'>+</button>
+                      <button onClick={() => decrease(item)} className='fruit-info__addBts'>-</button>
                     </div>
-                   <p className='ms-3 flex-grow-1 mb-0'>x ${item.newPrice}.00</p>
-                  <p className='m-0 added-cards__price'>${item.newPrice}.00</p>
+                   <p className='ms-3 flex-grow-1 mb-0'>x ${item.priceTo}.00</p>
+                  <p className='m-0 added-cards__price'>${item.priceTo}.00</p>
                   </div>
                 </div>
-                <button onClick={() => removeHandle(item.id)}>
+                <button onClick={() => removeCard(item)}>
                   <i className='bx text-grey fs-4 bx-x'></i>
                 </button>
               </li>
@@ -72,7 +73,7 @@ function CartModal() {
           </div>
           <div className='d-flex justify-content-between mt-3'>
             <h5>Total</h5>
-            <p className='total-price'>$22.00</p>
+            <p className='total-price'>${total}</p>
           </div>
           <input type="range" className='w-100' />
           <p className='text-center advert-text'>
@@ -83,6 +84,8 @@ function CartModal() {
             <button>Checkout</button> 
           </div>
       </div>
+      } 
+
     </div>
 )
 }
@@ -90,3 +93,7 @@ function CartModal() {
 
 
 export default CartModal
+
+
+
+

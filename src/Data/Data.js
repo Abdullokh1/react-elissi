@@ -41,64 +41,6 @@ import juice2 from '../assets/Images/juice-2.jpg'
 
 
 
-
-const dealData = [
-  {
-    id: 1,
-    image: violet,
-    type: 'Root vegetables',
-    name: 'Violet Cauliflower',
-    oldPrice: 15,
-    newPrice: 10,
-    sold: 90,
-    available: 40,
-    discount: '-33%',
-    soldInHour: '15 sold in last 19 hours',
-    view: 41,
-  },
-  {
-    id: 2,
-    image: greenLemon,
-    type: 'Chilies, garlic, lemon',
-    name: 'Organic lemon',
-    oldPrice: 25,
-    newPrice: 20,
-    sold: 60,
-    available: 80,
-    discount: '-20%',
-    soldInHour: '20 sold in last 12 hours',
-    view: 27,
-  },
-  {
-    id: 3,
-    image: milk,
-    type: 'Milks & Creams',
-    name: 'Sorbet ice cream',
-    oldPrice: 15,
-    newPrice: 12,
-    sold: 82,
-    available: 58,
-    discount: '-20%',
-    soldInHour: '35 sold in last 11 hours',
-    view: 33,
-  },
-  {
-    id: 4,
-    image: lime,
-    type: 'Milks & Creams',
-    name: 'Purea Lime',
-    oldPrice: 18,
-    newPrice: 12,
-    sold: 71,
-    available: 34,
-    discount: '-33%',
-    soldInHour: '5 sold in last 25 hours',
-    view: 15,
-  },
-]
-
-
-
 const ProductData = [
   {
     id: 1,
@@ -109,7 +51,9 @@ const ProductData = [
     soldCount: '16 sold in last 18 hours',
     StockCount: 99,
     view: 22,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 2,
@@ -120,7 +64,9 @@ const ProductData = [
     soldCount: '8 sold in last 13 hours',
     StockCount: 99,
     view: 28,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 3,
@@ -131,7 +77,9 @@ const ProductData = [
     soldCount: '9 sold in last 19 hours',
     StockCount: 50,
     view: 14,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 4,
@@ -144,7 +92,9 @@ const ProductData = [
     discount: '-20%',
     StockCount: 87,
     view: 46,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 5,
@@ -157,7 +107,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 46,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 6,
@@ -170,7 +122,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 46,
-    type: 'fruits'
+    type: 'fruits',
+    count: 1,
+    like: false,
   },
   {
     id: 7,
@@ -183,7 +137,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 36,
-    type: 'Vegetables'
+    type: 'Vegetables',
+    count: 1,
+    like: false,
   },
   {
     id: 8,
@@ -196,7 +152,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 35,
-    type: 'Vegetables'
+    type: 'Vegetables',
+    count: 1,
+    like: false,
   },
   {
     id: 9,
@@ -209,7 +167,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 30,
-    type: 'Vegetables'
+    type: 'Vegetables',
+    count: 1,
+    like: false,
   },
   {
     id: 10,
@@ -222,7 +182,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 84,
     view: 29,
-    type: 'Vegetables'
+    type: 'Vegetables',
+    count: 1,
+    like: false,
   },
   {
     id: 11,
@@ -235,7 +197,9 @@ const ProductData = [
     discount: '-50%',
     StockCount: 24,
     view: 20,
-    type: 'Vegetables'
+    type: 'Vegetables',
+    count: 1,
+    like: false,
   },
   {
     id: 12,
@@ -248,7 +212,9 @@ const ProductData = [
     discount: '-20%',
     StockCount: 58,
     view: 30,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   {
     id: 13,
@@ -261,7 +227,9 @@ const ProductData = [
     discount: '-20%',
     StockCount: 58,
     view: 18,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   {
     id: 14,
@@ -274,7 +242,9 @@ const ProductData = [
     discount: '-33%',
     StockCount: 34,
     view: 11,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   {
     id: 15,
@@ -287,7 +257,9 @@ const ProductData = [
     discount: '-33%',
     StockCount: 60,
     view: 30,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   {
     id: 16,
@@ -300,7 +272,9 @@ const ProductData = [
     discount: '-33%',
     StockCount: 83,
     view: 17,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   {
     id: 17,
@@ -313,11 +287,12 @@ const ProductData = [
     discount: '-33%',
     StockCount: 83,
     view: 49,
-    type: 'Milk & Creams'
+    type: 'Milk & Creams',
+    count: 1,
+    like: false,
   },
   
 ]
 
 
 export default ProductData;
-export {dealData}
